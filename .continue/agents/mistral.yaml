@@ -1,0 +1,50 @@
+# Mistral agents provider
+
+# """""
+# Free tier:
+# Per model -> 500 000 TPM, 1 000 000 000 Tokens per month.
+# (Approx 2000 requests per month).
+# Autocomplete (codestralApiKey) -> unlimited.
+# @see https://admin.mistral.ai/plateforme/limits
+# """""
+
+name: Mistral
+version: 1.0.0
+schema: v1
+
+# Models define which AI models this agent can use
+# https://hub.continue.dev/?q=mistral
+models:
+  - name: Codestral
+    provider: mistral
+    model: codestral-latest
+    apiKey: ${{ secrets.MISTRAL_API_KEY }}
+  - name: Mistral large
+    provider: mistral
+    model: mistral-large-latest
+    apiKey: ${{ secrets.MISTRAL_API_KEY }}
+  - name: Mistral small
+    provider: mistral
+    model: mistral-small-latest
+    apiKey: ${{ secrets.MISTRAL_API_KEY }}
+  - name: Mistral Nemo
+    provider: mistral
+    model: open-mistral-nemo
+    apiKey: ${{ secrets.MISTRAL_API_KEY }}
+  # https://console.mistral.ai/codestral
+  - name: Codestral autocomplete
+    provider: mistral
+    model: codestral-latest
+    apiKey: ${{ secrets.CODESTRAL_API_KEY }}
+    roles:
+      - autocomplete
+    autocompleteOptions:
+      disable: false
+      maxPromptTokens: 1024
+      debounceDelay: 250
+      modelTimeout: 150
+      maxSuffixPercentage: 0.2
+      prefixPercentage: 0.3
+      onlyMyCode: true
+
+# To learn more, see the full config.yaml reference: https://docs.continue.dev/reference

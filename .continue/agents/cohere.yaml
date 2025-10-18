@@ -1,0 +1,40 @@
+# Cohere agents provider
+
+# Free tier:
+# """"
+# Chat: 20req/min
+# All endpoints are limited to 1,000 calls per month with a trial key.
+# """"
+# @see https://docs.cohere.com/docs/rate-limits
+
+name: Cohere
+version: 1.0.0
+schema: v1
+
+# https://dashboard.cohere.com/api-keys
+
+# More models: https://docs.continue.dev/customize/model-providers/more/cohere
+# The models key defines which AI models this agent can use
+models:
+  - name: Command A 03-2025
+    provider: cohere
+    model: command-a-03-2025
+    apiKey: ${{ secrets.COHERE_API_KEY }}
+  - name: C4AI Aya Expanse 32B
+    provider: cohere
+    model: c4ai-aya-expanse-32b
+    apiKey: ${{ secrets.COHERE_API_KEY }}
+  - name: Cohere Embed v4.0
+    provider: cohere
+    model: embed-v4.0
+    apiKey: ${{ secrets.COHERE_API_KEY }}
+    roles:
+      - embed
+  - name: Cohere Rerank v3.5
+    provider: cohere
+    model: rerank-v3.5
+    apiKey: ${{ secrets.COHERE_API_KEY }}
+    roles:
+      - rerank
+
+# To learn more, see the full config.yaml reference: https://docs.continue.dev/reference
