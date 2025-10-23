@@ -21,12 +21,13 @@ models:
     provider: gemini
     model: gemini-2.5-pro
     apiKey: ${{ secrets.GEMINI_API_KEY }}
+    capabilities:
+      - image_input
   - name: Gemini 2.5 Flash
     provider: gemini
     model: gemini-2.5-flash
     apiKey: ${{ secrets.GEMINI_API_KEY }}
     capabilities:
-      - tool_use
       - image_input
   - name: Gemini 2.5 Flash Lite
     provider: gemini
@@ -36,8 +37,7 @@ models:
     provider: gemini
     model: gemini-2.0-flash
     apiKey: ${{ secrets.GEMINI_API_KEY }}
-  - name: Gemini 2.0 Flash Lite
-    provider: gemini
-    model: gemini-2.0-flash-lite
+    capabilities:
+      - image_input
 
 # To learn more, see the full config.yaml reference: https://docs.continue.dev/reference

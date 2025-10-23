@@ -30,6 +30,24 @@ models:
     apiKey: ${{ secrets.COHERE_API_KEY }}
     roles:
       - embed
+  - name: Command A Translate
+    provider: cohere
+    model: command-a-translate-08-2025
+    apiKey: ${{ secrets.COHERE_API_KEY }}
+    capabilities:
+      - image_input
+  - name: Command A Vision
+    provider: cohere
+    model: command-a-vision-07-2025
+    apiKey: ${{ secrets.COHERE_API_KEY }}
+    capabilities:
+      - image_input
+  - name: C4AI Aya Vision
+    provider: cohere
+    model: c4ai-aya-vision-32b
+    apiKey: ${{ secrets.COHERE_API_KEY }}
+    capabilities:
+      - image_input
   - name: Cohere Rerank v3.5
     provider: cohere
     model: rerank-v3.5

@@ -31,6 +31,18 @@ models:
     provider: mistral
     model: open-mistral-nemo
     apiKey: ${{ secrets.MISTRAL_API_KEY }}
+  - name: Pixtral 12B
+    provider: mistral
+    model: pixtral-12b-latest
+    apiKey: ${{ secrets.MISTRAL_API_KEY }}
+    capabilities:
+      - image_input
+  - name: Pixtral Large
+    provider: mistral
+    model: pixtral-large-latest
+    apiKey: ${{ secrets.MISTRAL_API_KEY }}
+    capabilities:
+      - image_input
   # https://console.mistral.ai/codestral
   - name: Codestral autocomplete
     provider: mistral
