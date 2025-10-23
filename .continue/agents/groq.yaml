@@ -27,11 +27,6 @@ models:
     provider: groq
     model: groq/compound-mini
     apiKey: ${{ secrets.GROQ_API_KEY }}
-# 30 RPM 1K RPD 6K TPM 100K TPD
-  - name: Deepseek R1 distill llama 70b (6K)
-    provider: groq
-    model: deepseek-r1-distill-llama-70b
-    apiKey: ${{ secrets.GROQ_API_KEY }}
 # 30 RPM 1K RPD 6K TPM 500K TPD
   - name: Llama 4 Maverick (6K)
     provider: groq
@@ -46,11 +41,6 @@ models:
   - name: Qwen 3 32B (6K)
     provider: groq
     model: qwen/qwen3-32b
-    apiKey: ${{ secrets.GROQ_API_KEY }}
-# 30 RPM 14.4K RPD 15K TPM 500K TPD
-  - name: Gemma 2 9B (15K)
-    provider: groq
-    model: gemma2-9b-it
     apiKey: ${{ secrets.GROQ_API_KEY }}
 
 # To learn more, see the full config.yaml reference: https://docs.continue.dev/reference
