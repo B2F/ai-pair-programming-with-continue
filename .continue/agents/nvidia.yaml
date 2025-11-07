@@ -1,0 +1,77 @@
+# Nvidia agents provider
+
+# """"
+# Free with unspecified limits.
+
+# For speed: GPT OSS 120B
+# For performance: Minimax M2
+# For image analysis: Microsoft Phi 4 Multimodal Instruct
+
+# """"
+
+name: Nvidia
+version: 1.0.0
+schema: v1
+
+# Full Nvidia models list: https://build.nvidia.com/models 
+
+# https://docs.continue.dev/customization/models
+# The models key defines which AI models this agent can use
+models:
+  - name: Minimax M2
+    provider: nvidia
+    model: minimaxai/minimax-m2
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+  - name: GPT OSS 120B
+    provider: nvidia
+    model: openai/gpt-oss-120b
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+  - name: Microsoft Phi 4 Multimodal Instruct (Image Input)
+    provider: nvidia
+    model: microsoft/phi-4-multimodal-instruct
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+    capabilities:
+      - image_input
+  - name: GPT OSS 20B
+    provider: nvidia
+    model: openai/gpt-oss-20b
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+  - name: Qwen 3 Coder 480b A35B Instruct
+    provider: nvidia
+    model: qwen/qwen3-coder-480b-a35b-instruct
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+  - name: Qwen 3 Next 80B A3B Thinking
+    provider: nvidia
+    model: qwen/qwen3-next-80b-a3b-thinking
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+  - name: Qwen 3 Next 80B A3B Instruct
+    provider: nvidia
+    model: qwen/qwen3-next-80b-a3b-instruct
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+  - name: Nemotron nano 9B V2
+    provider: nvidia
+    model: nvidia/nvidia-nemotron-nano-9b-v2
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+  - name: Moonshot Kimi K2 Instruct
+    provider: nvidia
+    model: moonshotai/kimi-k2-instruct-0905
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+  - name: Seed OSS 36B Instruct
+    provider: nvidia
+    model: bytedance/seed-oss-36b-instruct
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+  - name: Deepseek R1 0528
+    provider: nvidia
+    model: deepseek-ai/deepseek-r1-0528
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+  - name: Deepseek V3.1 Terminus
+    provider: nvidia
+    model: deepseek-ai/deepseek-v3_1-terminus
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+  - name: Microsoft Phi 4 Mini (Image Input)
+    provider: nvidia
+    model: microsoft/phi-4-mini-flash-reasoning
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+    capabilities:
+      - image_input
+# To learn more, see the full config.yaml reference: https://docs.continue.dev/reference
