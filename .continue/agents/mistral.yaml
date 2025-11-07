@@ -15,6 +15,14 @@ schema: v1
 # Models define which AI models this agent can use
 # https://hub.continue.dev/?q=mistral
 models:
+  - name: Magistral medium
+    provider: mistral
+    model: magistral-medium-latest
+    apiKey: ${{ secrets.MISTRAL_API_KEY }}
+  - name: Magistral small
+    provider: mistral
+    model: magistral-small-latest
+    apiKey: ${{ secrets.MISTRAL_API_KEY }}
   - name: Codestral
     provider: mistral
     model: codestral-latest
