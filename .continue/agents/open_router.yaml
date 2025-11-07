@@ -17,7 +17,7 @@ schema: v1
 
 # https://openrouter.ai/models
 models:
-  - name: QWEN 3 Coder 480B A35B
+  - name: QWEN 3 Coder 480B A35B (free)
     provider: openrouter
     model: qwen/qwen3-coder:free
     apiKey: ${{ secrets.OPENROUTER_API_KEY }}
