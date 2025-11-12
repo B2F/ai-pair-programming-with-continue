@@ -1,10 +1,7 @@
 # Mistral agents provider
 
 # """""
-# Free tier:
-# Per model -> 500 000 TPM, 1 000 000 000 Tokens per month.
-# (Approx 2000 requests per month).
-# Autocomplete (codestralApiKey) -> unlimited.
+# Rate limits: 500K TPM, 1000000K tokens per month (~33M TPD).
 # @see https://admin.mistral.ai/plateforme/limits
 # """""
 
@@ -51,7 +48,7 @@ models:
     apiKey: ${{ secrets.MISTRAL_API_KEY }}
     capabilities:
       - image_input
-  # https://console.mistral.ai/codestral
+  # https://console.mistral.ai/codestral (separate API key)
   - name: Codestral autocomplete
     provider: mistral
     model: codestral-latest

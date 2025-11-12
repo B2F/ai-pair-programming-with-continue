@@ -11,8 +11,6 @@ name: Cohere
 version: 1.0.0
 schema: v1
 
-# https://dashboard.cohere.com/api-keys
-
 # More models: https://docs.continue.dev/customize/model-providers/more/cohere
 # The models key defines which AI models this agent can use
 models:

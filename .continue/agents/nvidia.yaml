@@ -20,7 +20,7 @@ name: Nvidia
 version: 1.0.0
 schema: v1
 
-# Full Nvidia models list: https://build.nvidia.com/models 
+# Full Nvidia models list: https://build.nvidia.com/models
 
 # https://docs.continue.dev/customization/models
 # The models key defines which AI models this agent can use
