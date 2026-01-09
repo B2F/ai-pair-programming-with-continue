@@ -1,0 +1,63 @@
+name: CLI compatible models
+version: 1.0.0
+schema: v1
+models:
+  - name: Ollama
+    provider: ollama
+    model: AUTODETECT
+  - name: LM Studio
+    provider: lmstudio
+    model: AUTODETECT
+    apiBase: http://localhost:1234/v1/
+  - name: Minimax M2 (nvidia)
+    provider: nvidia
+    model: minimaxai/minimax-m2
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+  - name: GLM 4.5 Air (openrouter :free)
+    provider: openrouter
+    model: z-ai/glm-4.5-air:free
+    apiKey: ${{ secrets.OPENROUTER_API_KEY }}
+  - name: QWEN 3 Coder 480B A35B (openrouter :free)
+    provider: openrouter
+    model: qwen/qwen3-coder:free
+    apiKey: ${{ secrets.OPENROUTER_API_KEY }}
+  - name: Qwen 3 Coder 480b A35B Instruct (nvidia)
+    provider: nvidia
+    model: qwen/qwen3-coder-480b-a35b-instruct
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+  - name: Moonshot Kimi K2 Instruct (nvidia)
+    provider: nvidia
+    model: moonshotai/kimi-k2-instruct-0905
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+  - name: Magistral medium (mistral)
+    provider: mistral
+    model: magistral-medium-latest
+    apiKey: ${{ secrets.MISTRAL_API_KEY }}
+  - name: GPT OSS 20B (nvidia)
+    provider: nvidia
+    model: openai/gpt-oss-20b
+    apiKey: ${{ secrets.NVIDIA_API_KEY }}
+ 
+# Recommended local setting for code autocomplete:
+# - name: Qwen coder 2.5 3B
+#   provider: lmstudio
+#   model: qwen2.5-coder-3b-instruct
+#   roles:
+#     - autocomplete
+#   autocompleteOptions:
+#     disable: false
+#     maxPromptTokens: 1024
+#     debounceDelay: 250
+#     modelTimeout: 150
+#     maxSuffixPercentage: 0.2
+#     prefixPercentage: 0.3
+#     onlyMyCode: true
+#     keepAlive: 5m
+context:
+  - provider: code
+  - provider: docs
+  - provider: diff
+  - provider: terminal
+  - provider: problems
+  - provider: folder
+  - provider: codebase
